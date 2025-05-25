@@ -1,61 +1,68 @@
-# Auth0 Python Web App Sample
+# Flask Auth0 Login App — CST8919 Lab 1
 
-This sample demonstrates how to add authentication to a Python web app using Auth0.
+This project is a Flask web application that demonstrates secure user authentication using **Auth0**. It allows users to log in and log out, and access a protected route available only to authenticated users.
 
-# Running the App
+## 🔐 Auth0 Integration
 
-To run the sample, make sure you have `python3` and `pip` installed.
+- Users are authenticated through Auth0 (OAuth 2.0 / OpenID Connect).
+- User info (name, email, picture) is stored in the Flask session after login.
+- Auth0 handles login UI, tokens, and session security.
 
-Rename `.env.example` to `.env` and populate it with the client ID, domain, secret, callback URL and audience for your
-Auth0 app. If you are not implementing any API you can use `https://YOUR_DOMAIN.auth0.com/userinfo` as the audience.
-Also, add the callback URL to the settings section of your Auth0 client.
+---
 
-Register `http://localhost:3000/callback` as `Allowed Callback URLs` and `http://localhost:3000`
-as `Allowed Logout URLs` in your client settings.
+## 🛠 Setup Instructions
 
-Run `pip install -r requirements.txt` to install the dependencies and run `python server.py`.
-The app will be served at [http://localhost:3000/](http://localhost:3000/).
+### 1. Clone the Repository
 
-# Running the App with Docker
+```bash
+git clone https://github.com/YOUR_USERNAME/flask-auth0-lab.git
+cd flask-auth0-lab
+```
+### 2. Create and Activate a Virtual Environment
 
-To run the sample, make sure you have `docker` installed.
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+### 3. Install Dependencies
 
-To run the sample with [Docker](https://www.docker.com/), make sure you have `docker` installed.
+```bash
+pip install -r requirements.txt
+```
+### 4. Create a .env File
 
-Rename the .env.example file to .env, change the environment variables, and register the URLs as explained [previously](#running-the-app).
+In the root folder, create a file called .env and add the following values:
 
-Run `sh exec.sh` to build and run the docker image in Linux or run `.\exec.ps1` to build
-and run the docker image on Windows.
+```bash
+AUTH0_CLIENT_ID=your_auth0_client_id
+AUTH0_CLIENT_SECRET=your_auth0_client_secret
+AUTH0_DOMAIN=your_domain.auth0.com
+AUTH0_CALLBACK_URL=http://127.0.0.1:5000/callback
+APP_SECRET_KEY=your_random_secret_key
+```
 
-## What is Auth0?
+### 5. Run the App
 
-Auth0 helps you to:
+```bash
+flask run
+```
 
-* Add authentication with [multiple authentication sources](https://auth0.com/docs/identityproviders),
-either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, among others**,or
-enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
-* Add support for **[linking different user accounts](https://auth0.com/docs/link-accounts)** with the same user.
-* Support for generating signed [JSON Web Tokens](https://auth0.com/docs/jwt) to call your APIs and
-**flow the user identity** securely.
-* Analytics of how, when and where users are logging in.
-* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://auth0.com/docs/rules).
+Open your browser at: http://127.0.0.1:5000
 
-## Create a free account in Auth0
+## Demo Video
+### Watch Demo (YouTube)
 
-1. Go to [Auth0](https://auth0.com) and click Sign Up.
-2. Use Google, GitHub or Microsoft Account to login.
+The video includes:
 
-## Issue Reporting
+A walkthrough of login/logout
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section.
-Please do not report security vulnerabilities on the public GitHub issue tracker.
-The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+Access to protected route
+
+Explanation of how Auth0 and Flask integration works
 
 ## Author
+Maryam K.
+For CST8919 - Secure Web Application Development
 
-[Auth0](https://auth0.com)
 
-## License
 
-This project is licensed under the MIT license. See the [LICENSE](../LICENSE) file for more info.
