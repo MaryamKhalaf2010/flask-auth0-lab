@@ -61,7 +61,7 @@ Access to protected route
 Explanation of how Auth0 and Flask integration works
 
 ## Author
-Maryam K.
+Maryam Khalaf.
 For CST8919 - Secure Web Application Development
 
 
