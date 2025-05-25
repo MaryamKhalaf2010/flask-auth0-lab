@@ -15,7 +15,7 @@ This project is a Flask web application that demonstrates secure user authentica
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/flask-auth0-lab.git
+git clone https://github.com/MaryamKhalaf2010/flask-auth0-lab.git
 cd flask-auth0-lab
 ```
 ### 2. Create and Activate a Virtual Environment
