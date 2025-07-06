@@ -69,7 +69,7 @@ def logout():
     return redirect(
         f'https://{os.getenv("AUTH0_DOMAIN")}/v2/logout?' +
         urlencode({
-            'returnTo': url_for('home', _external=True, _scheme='https'),
+            'returnTo': url_for('home', _external=True, _scheme='https'),  # Force HTTPS
             'client_id': os.getenv("AUTH0_CLIENT_ID")
         })
     )
