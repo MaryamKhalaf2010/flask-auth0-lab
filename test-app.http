@@ -1,0 +1,16 @@
+### 1. Access login page (simulate valid login redirect)
+GET https://flask-auth0-maryam123-f4gqc5engagcfkc5.canadacentral-01.azurewebsites.net/login
+Accept: text/html
+
+###
+
+### 2. Access protected route after login (use real session cookie)
+GET https://flask-auth0-maryam123-f4gqc5engagcfkc5.canadacentral-01.azurewebsites.net/protected
+Cookie: session=.eJx9jssOgjAQRf-liaxMgTJAS0LUjf8xTHmYWCBt0QX67xbYm8zizszJyV3Z4lrLqpW1Bh9PVjHDUb9xFNl1mPx24zQZdmYjmvbPe36QX-xGDN7Propjx3uLL_RoNyQ-YqygyWQCjVJp0YhSlVQQdIAACvKO5MXVIJPI1nMf6Xp3nbLbSdzDkB45Ln5INmHYD6ULyfB57EMLtzShwc58CpmJFEiXSpPSIMqcdCeLln2_P5CEThI.aGsg0w.J6BaaXih51y5uV6KNXpqCTRipBA
+Accept: text/html
+
+###
+
+### 3. Access protected route without logging in (unauthorized)
+GET https://flask-auth0-maryam123-f4gqc5engagcfkc5.canadacentral-01.azurewebsites.net/protected
+Accept: text/html
